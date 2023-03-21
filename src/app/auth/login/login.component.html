@@ -1,0 +1,47 @@
+<body class="hold-transition login-page">
+<div class="login-box">
+      <!-- /.login-logo -->
+      <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+          <a href="../../index2.html" class="h1"><b>ITSX</b>aña</a>
+        </div>
+        <div class="card-body">
+
+          <form (ngSubmit)="onLogin(loginForm.value)" [formGroup]="loginForm" >
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" formControlName="control" placeholder="username">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" formControlName="alupas" placeholder="password"  required>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <!-- /.col -->
+              <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block" value="log in">Iniciar Sesión</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+
+
+
+
+</body>
+

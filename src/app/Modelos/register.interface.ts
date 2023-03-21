@@ -1,0 +1,19 @@
+export interface RegisterIn{
+    curp:string;
+    rfc:string;
+    nss:string;
+    nombre:string;
+    apellido_paterno:string;
+    apellido_materno:string;
+    fecha_nacimiento:Date;
+    email:string;
+    genero:number;
+    estado_civil:number;
+    tipo_sangre:number;
+    status:number;
+    requiere_actualizar_domicilio:number;
+    requiere_actualizar_bachillerato:number;
+    requiere_actualizar_contacto:number;
+    requiere_actualizar_contacto_personal:number;
+    rh_actualizacion:number;
+}

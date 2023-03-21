@@ -1,0 +1,266 @@
+
+<div class="container">
+
+  <h4>Formularios <small>Validación de Formularios Reactivos </small></h4>
+  <hr>
+  <form [formGroup]="formulario" (ngSubmit)="postForm(formulario.value)">
+
+    <div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Curp</label>
+        <div class="col-8">
+
+          <input class="form-control"
+                 type="text"
+                 formControlName="curp"
+                 [class.is-invalid]="CurpInv"
+                 placeholder="Curp">
+                 <small *ngIf="CurpInv" class="text-danger">CAMPO VACIO</small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">RFC</label>
+        <div class="col-8">
+
+          <input class="form-control"
+                 type="text"
+                 placeholder="RFC"
+                 formControlName="rfc"
+                 [class.is-invalid]="RFCInv">
+                 <small *ngIf="RFCInv" class="text-danger">CAMPO VACIO </small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">NSS</label>
+        <div class="col-8">
+
+          <input class="form-control"
+                 type="text"
+                 placeholder="NSS"
+                 formControlName="nss"
+                 [class.is-invalid]="NSSInv">
+                 <small *ngIf="NSSInv" class="text-danger">CAMPO VACIO </small>
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Nombre</label>
+        <div class="col-8">
+
+          <input class="form-control"
+                 type="text"
+                 placeholder="Nombre"
+                 formControlName="nombre"
+                 [class.is-invalid]="NombreInv">
+                 <small *ngIf="NombreInv" class="text-danger">CAMPO VACIO </small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Apellido Paterno</label>
+        <div class="col-8">
+
+          <input class="form-control"
+                 type="text"
+                 placeholder="Apellido Paterno"
+                 formControlName="apellido_paterno"
+                 [class.is-invalid]="APPInv">
+                 <small *ngIf="APPInv" class="text-danger">CAMPO VACIO </small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Apellido Materno</label>
+        <div class="col-8">
+
+          <input class="form-control"
+                 type="text"
+                 placeholder="Apellido Materno"
+                 formControlName="apellido_materno"
+                 [class.is-invalid]="APMInv">
+                 <small *ngIf="APMInv" class="text-danger">CAMPO VACIO </small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Fecha de nacimiento</label>
+        <div class="col-8">
+
+          <input  placeholder="Fecha de nacimiento"
+                  type="date" id="example"
+                  class="form-control"
+                  formControlName="fecha_nacimiento"
+                  [class.is-invalid]="FNaInv">
+                 <small *ngIf="FNaInv" class="text-danger">CAMPO VACIO </small>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Correo</label>
+      <div class="col-md-8">
+
+        <input class="form-control"
+               type="email"
+               formControlName="email"
+               placeholder="Correo electrónico"
+               [class.is-invalid]="CorreoInv">
+               <small *ngIf="CorreoInv" class="text-danger">CORREO INVALIDO</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Genero</label>
+      <div class="col-8">
+
+        <select class="form-control select2bs4" formControlName="genero" [class.is-invalid]="GeneroInv">
+          <option selected="selected"></option>
+          <option>1</option>
+          <option>2</option>
+
+        </select>
+               <small *ngIf="GeneroInv" class="text-danger">CAMPO VACIO</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Estado civil</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="Estado Civil"
+               formControlName="estado_civil"
+               [class.is-invalid]="EsCiInv">
+               <small *ngIf="EsCiInv" class="text-danger">CAMPO VACIO </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Tipo de sangre</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="Tipo de sangre"
+               formControlName="tipo_sangre"
+               [class.is-invalid]="TSangreInv">
+               <small *ngIf="TSangreInv" class="text-danger">CAMPO VACIO </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Status</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="Status"
+               formControlName="status"
+               [class.is-invalid]="StatusInv">
+               <small *ngIf="StatusInv" class="text-danger">CAMPO VACIO </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Dimicilio</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="Dimicilio"
+               formControlName="requiere_actualizar_domicilio"
+               [class.is-invalid]="DomicilioInv">
+               <small *ngIf="DomicilioInv" class="text-danger">CAMPO VACIO </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Bachillerato</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="Bachillerato"
+               formControlName="requiere_actualizar_bachillerato"
+               [class.is-invalid]="BachilleratoInv">
+               <small *ngIf="BachilleratoInv" class="text-danger">CAMPO VACIO </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Contacto</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="Contacto"
+               formControlName="requiere_actualizar_contacto"
+               [class.is-invalid]="ContactoInv">
+               <small *ngIf="ContactoInv" class="text-danger">CAMPO VACIO </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Contacto personal</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="Contacto personal"
+               formControlName="requiere_actualizar_contacto_personal"
+               [class.is-invalid]="ContactoPerInv">
+               <small  *ngIf="ContactoPerInv" class="text-danger">CAMPO VACIO </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">RH</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               placeholder="RH"
+               formControlName="rh_actualizacion"
+               [class.is-invalid]="RHInv">
+               <small *ngIf="RHInv" class="text-danger">CAMPO VACIO </small>
+      </div>
+    </div>
+
+
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">&nbsp;</label>
+      <div class="input-group col-md-8">
+        <button type="submit" class="btn btn-outline-primary mr-2" [routerLink]="['/. persona.id']">
+          Guardar
+        </button>
+        <button type="button" class="btn btn-outline-danger" (click)="limpiar()">
+          Limpiar
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+  <h3 class="mt-5">formulario</h3>
+
+  <pre>Estado formulario:{{formulario.valid}}
+    <br>
+    Status:{{formulario.status}}
+  </pre>
+
+  <pre>
+    {{formulario.value| json}}
+  </pre>
+
+
+  </div>
