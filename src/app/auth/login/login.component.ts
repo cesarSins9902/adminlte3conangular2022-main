@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       })*/
       console.log(data.user);
 
-      if(data.msg=="Inicio de sesión correct"){
+      if(data.msg=="Inicio de sesión correcto"){
         localStorage.setItem('token',data.token);
         this.router.navigate(['/dashboard']);
       }else{
