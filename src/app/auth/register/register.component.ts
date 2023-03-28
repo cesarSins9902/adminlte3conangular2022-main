@@ -5,40 +5,12 @@ import {FormControl,FormGroup, Validators, FormBuilder} from '@angular/forms'
 import { Router } from '@angular/router';
 import { RegisterIn } from 'src/app/Modelos/register.interface';
 
-
-
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
- /*RegisterForm=new FormGroup({
-
-    curp: new FormControl(''),
-    rfc:new FormControl(''),
-    nss:new FormControl(''),
-    nombre:new FormControl(''),
-    apellido_paterno:new FormControl(''),
-    apellido_materno:new FormControl(''),
-    fecha_nacimiento:new FormControl(''),
-    email:new FormControl(''),
-    genero:new FormControl(''),
-    estado_civil:new FormControl(''),
-    tipo_sangre:new FormControl(''),
-    status:new FormControl(''),
-    requiere_actualizar_domicilio:new FormControl(''),
-    requiere_actualizar_bachillerato:new FormControl(''),
-    requiere_actualizar_contacto:new FormControl(''),
-    requiere_actualizar_contacto_personal:new FormControl(''),
-    rh_actualizacion:new FormControl('')
-
-
-
-
-  })*/
 
   formulario!:FormGroup;
 
@@ -134,16 +106,8 @@ export class RegisterComponent implements OnInit {
 
     return this.formulario.get('rh_actualizacion')?.invalid && this.formulario.get('rh_actualizacion')?.touched
   }
-
-
-
-
-
-
   crearFormulario(){
-
     this.formulario=this.fb.group({
-
     curp:['',[Validators.required, Validators.pattern('^[A-Z]{1}[AEIOU]{1}[A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM]{1}(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[0-9A-Z]{1}[0-9]{1}$')]],
     rfc:['',Validators.required, Validators.pattern('([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$')],
     nss:['',[Validators.required,Validators.minLength(11), Validators.maxLength(11)]],
@@ -162,28 +126,16 @@ export class RegisterComponent implements OnInit {
     requiere_actualizar_contacto_personal:['',Validators.required],
     rh_actualizacion:['',Validators.required],
   })
-
   }
-
   postForm(form:RegisterIn, ){
     this.api.postRegister(form).subscribe(data=>{
       this.formulario.value;
       console.log(data)
       this.router.navigate(['/usuarios']);
     })
-
-
   }
-
   limpiar(){
 
     this.formulario.reset();
   }
-
-
-
-
-
-
-
 }

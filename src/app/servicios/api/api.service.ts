@@ -11,30 +11,24 @@ import { RegisterIn } from 'src/app/Modelos/register.interface';
   providedIn: 'root'
 })
 export class ApiService {
-  url:string=" http://localhost:3000/api"
+  url:string=" http://192.168.56.100/api"
 
   constructor(private http:HttpClient) { }
 
   loginByEmail(form: LoginIn): Observable<ResponseIn>{
     let direccion= this.url + '/login';
     return this.http.post<ResponseIn>(direccion,form);
-
-    /*,({observe:'response'}).subscribe(res=>{
-      console.log('token',res.body.response)
-    })*/
   }
 
-  //registro de usuariosAlv
+  //registro de usuario
   postRegister(form: RegisterIn ): Observable<any>{
     let direccion= this.url + '/registro';
     return this.http.post<any>(direccion,form);
   }
 
   getUser(id:number):Observable<PersonaIn>{
-    //let direccion= this.url + '/api/users';
     let direccion= this.url + '/registro';
     return  this.http.get<PersonaIn>(`${direccion}${id}`);
-
   }
 
 }

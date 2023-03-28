@@ -1,6 +1,6 @@
 export interface ResponseIn{
     response: any;
-    msg: any;
+    msg: string;
     token:string;
     error: any;
     user: any;

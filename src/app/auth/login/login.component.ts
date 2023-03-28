@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private api:ApiService, private router:Router) { }
 
-  errorStatus: boolean = false;
+  errorStatus: boolean = true;
   erroMsj: any="";
 
   ngOnInit(): void {
@@ -35,32 +35,13 @@ export class LoginComponent implements OnInit {
 
   onLogin(form : LoginIn){
     this.api.loginByEmail(form).subscribe(data =>{
-      /*this.http.post<ResponseIn>('http://127.0.0.1:8000/login/',form,{observe: 'response'})
-      .subscribe(res=>{
-        const token= res.body.response;
-        console.log(token,'token');
-        localStorage.setItem("token",token);
-        sessionStorage.setItem("token",token);
-        this.router.navigate(['/dashboard']);
-      })*/
-      console.log(data.user);
-
       if(data.msg=="Inicio de sesión correcto"){
         localStorage.setItem('token',data.token);
         this.router.navigate(['/dashboard']);
       }else{
-        this.errorStatus=true;
-        this.erroMsj=data.error.error_msg;
+        this.errorStatus=false;
+        this.erroMsj=data.response.error_msg;
       }
-      /*let dataResponse:ResponseIn = data;
-
-      if(dataResponse.message == "OK"){
-        localStorage.setItem("token",dataResponse.token);
-        this.router.navigate(['/dashboard']);
-      }else{
-        this.errorStatus=true;
-        this.erroMsj=dataResponse.message.error_msg;
-      }*/
     })
 
   }

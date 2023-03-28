@@ -3,7 +3,7 @@
       <!-- /.login-logo -->
       <div class="card card-outline card-primary">
         <div class="card-header text-center">
-          <a href="../../index2.html" class="h1"><b>ITSX</b>aña</a>
+          <a href="../../index2.html" class="h1"><b>ITSX</b></a>
         </div>
         <div class="card-body">
 
@@ -33,6 +33,10 @@
               <!-- /.col -->
             </div>
           </form>
+
+          <div class="alert alert-danger" *ngIf="errorStatus">
+            <p>{{ erroMsj }}</p>
+          </div>
 
         </div>
         <!-- /.card-body -->
